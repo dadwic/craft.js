@@ -9,6 +9,7 @@ import { Text } from '../components/user/Text';
 import { SettingsPanel } from '../components/SettingsPanel';
 import { Editor, Frame, Element } from '@craftjs/core';
 import { Topbar } from '../components/Topbar';
+import { RenderNode } from '../components/RenderNode';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,6 +26,7 @@ export default function App() {
         Basic Page Editor
       </Typography>
       <Editor
+        onRender={RenderNode}
         resolver={{
           Card,
           Button,

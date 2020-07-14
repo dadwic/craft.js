@@ -13,7 +13,6 @@ import {
   Snackbar,
 } from '@material-ui/core';
 import { useEditor } from '@craftjs/core';
-import lz from 'lzutf8';
 import copy from 'copy-to-clipboard';
 
 export const Topbar = ({ onLoadState }) => {
@@ -51,7 +50,7 @@ export const Topbar = ({ onLoadState }) => {
             color="secondary"
             onClick={() => {
               const json = query.serialize();
-              copy(lz.encodeBase64(lz.compress(json)));
+              copy(json);
               setSnackbarMessage('State copied to clipboard');
             }}
             style={{ marginRight: '10px' }}
@@ -94,8 +93,7 @@ export const Topbar = ({ onLoadState }) => {
               <MaterialButton
                 onClick={() => {
                   setDialogOpen(false);
-                  const json = lz.decompress(lz.decodeBase64(stateToLoad));
-                  actions.deserialize(json);
+                  actions.deserialize(stateToLoad);
                   setSnackbarMessage('State loaded');
                 }}
                 color="primary"
