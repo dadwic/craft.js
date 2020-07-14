@@ -10,6 +10,7 @@
     "copy-to-clipboard": "^3.2.0",
     "lzutf8": "^0.5.5",
     "material-ui-color-picker": "^3.2.0",
+    "material-ui-popup-state": "^1.6.1",
     "next": "9.1.2",
     "next-transpile-modules": "^2.3.1",
     "prop-types": "latest",

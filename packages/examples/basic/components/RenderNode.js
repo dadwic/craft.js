@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useCallback } from 'react';
-import { ROOT_NODE } from '@pagezilla/utils';
-import { useNode, useEditor } from '@pagezilla/core';
-import SettingsPanel from './SettingsPanel';
+import { ROOT_NODE } from '@craftjs/utils';
+import { useNode, useEditor } from '@craftjs/core';
+import { SettingsPanel } from './SettingsPanel';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
@@ -199,17 +199,17 @@ export const RenderNode = ({ render }) => {
     currentDOM.style.left = left;
   }, [dom]);
 
-  useEffect(() => {
-    document
-      .querySelector('.craftjs-renderer')
-      .addEventListener('scroll', scroll);
+  // useEffect(() => {
+  //   document
+  //     .querySelector('.craftjs-renderer')
+  //     .addEventListener('scroll', scroll);
 
-    return () => {
-      document
-        .querySelector('.craftjs-renderer')
-        .removeEventListener('scroll', scroll);
-    };
-  }, [scroll]);
+  //   return () => {
+  //     document
+  //       .querySelector('.craftjs-renderer')
+  //       .removeEventListener('scroll', scroll);
+  //   };
+  // }, [scroll]);
 
   return (
     <>
